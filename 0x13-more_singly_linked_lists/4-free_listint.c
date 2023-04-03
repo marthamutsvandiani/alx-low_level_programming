@@ -11,13 +11,13 @@
  * Return : Nothing
  */
 
-void free_listint(listint_t *head);
+void free_listint(listint_t *head)
 {
 	listint_t *temporary;
 
 	while (head)
 	{
-		temorary = head;
+		temporary = head;
 		head = head->next;
 		free(temporary);
 	}
