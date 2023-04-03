@@ -6,22 +6,20 @@
  * @h:This is a pointer to the head/start of list node
  * Return : The number of Nodes in the list
  */
-
-size_t print_listint(const listint_t *h);
-
-const listint_t
+ 
+size_t print_listint(const listint_t *h)
 {
-int number = 0;
+	int total = 0;
 
 	if (h != NULL)
-{
+	{
+		while (h)
+		{
+			printf("%d\n", h->n);
+			h = h->next;
+		        total++;
+		}
+	}
 
-while (h)
-{
-printf("%d\n", h->n);
-h = h->next;
-number++;
-}
-}
-return (number);
+	return (total);
 }
