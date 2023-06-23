@@ -3,20 +3,21 @@
 #include "lists.h"
 
 /**
-*dlistint_len - that returns the number of elements
-*@h: variable pointer get list to print
-*Return: the number of nodes
+* dlistint_len - return the number of elements in a dlistint
+*
+* @h: pointer to header of linked list
+* Return: number of elements
 */
-
 size_t dlistint_len(const dlistint_t *h)
 {
-	size_t res = 0;
-	const dlistint_t *i;
+size_t i = 0;
+const dlistint_t *current = h;
 
-	for (i = h; i != NULL; i = i->next)
-	{
-		res++;
-	}
-	return (res);
+while (current != NULL)
+{
+i++;
+current = current->next;
+}
+return (i);
 }
 

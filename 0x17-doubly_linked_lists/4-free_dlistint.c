@@ -1,22 +1,26 @@
+/*
+ * File: 4-free_dlistint.c
+ * Auth: tichaonapaul01
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "lists.h"
 
 /**
-* free_dlistint - function that frees a list
-* @head: variable pointer
-* Return:
-*/
-
+ * free_dlistint - function that frees a dlistint_t list
+ *
+ * @head: header to list to be freed
+ * Return: Nothing
+ */
 void free_dlistint(dlistint_t *head)
 {
-	while (head != NULL)
-	{
-		dlistint_t *next = head->next;
+dlistint_t *temp;
 
-		free(head);
-		head = next;
-	}
-
+while (head != NULL)
+{
+temp = head;
+head = head->next;
+free(temp);
 }
-
+}
